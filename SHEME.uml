@@ -1,0 +1,37 @@
+@startuml
+start
+
+:User;
+:Program;
+:Input (0-8);
+
+switch (Выбор действия)
+case (1) 
+  :List of files;
+case (2) 
+  :Create file;
+case (3) 
+  :View file;
+case (4) 
+  :Edit file;
+case (5) 
+  :Rename file;
+case (6) 
+  :Delete file;
+case (7) 
+  :Search text in file;
+case (8) 
+  :Replace text in file;
+case (0) 
+  stop
+endswitch
+
+if (Успешно выполнено?) then (Да)
+  :Завершение операции;
+else (Нет)
+  :Ошибка -> Вывести имя ошибки;
+  :Повторить действие;
+endif
+
+stop
+@enduml
