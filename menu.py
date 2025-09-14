@@ -1,7 +1,7 @@
 from utils import WELCOME
 from files import list_files, delete_file, rename_file
 from view import view_file
-from edit import create_file, edit_file
+from edit import create_file, edit_file, search_in_file, replace_in_file
 
 def main_loop():
     print(WELCOME)
@@ -13,6 +13,8 @@ def main_loop():
         print('  4) Редактировать файл')
         print('  5) Переименовать файл')
         print('  6) Удалить файл')
+        print('  7) Поиск текста в файле')
+        print('  8) Замена текста в файле')
         print('  0) Выход')
         cmd = input('Выберите действие: ').strip()
         if cmd == '1':
@@ -27,6 +29,10 @@ def main_loop():
             rename_file()
         elif cmd == '6':
             delete_file()
+        elif cmd == '7':
+            search_in_file()
+        elif cmd == '8':
+            replace_in_file()
         elif cmd == '0':
             print('Выход. До встречи!')
             break
